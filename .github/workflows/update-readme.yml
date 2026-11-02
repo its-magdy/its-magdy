@@ -1,0 +1,64 @@
+name: Update README
+
+on:
+  schedule:
+    - cron: "17 6 * * *" # daily, 06:17 UTC
+  workflow_dispatch: # "Run workflow" button in the Actions tab
+
+permissions:
+  contents: write # only what's needed to commit README.md
+
+concurrency:
+  group: update-readme
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      # npm total: sum last-month downloads for every package below, round down,
+      # and rewrite only the text between the NPM-TOTAL markers.
+      - name: Update npm download total
+        env:
+          PACKAGES: "@design-twin/dtwin @translate-local/tl"
+        run: |
+          total=0
+          for pkg in $PACKAGES; do
+            n=$(curl -fsS --retry 3 "https://api.npmjs.org/downloads/point/last-month/$pkg" | jq -r '.downloads // empty') || n=""
+            if ! [[ "$n" =~ ^[0-9]+$ ]]; then
+              echo "::warning::Could not read downloads for $pkg; leaving README unchanged."
+              exit 0
+            fi
+            total=$((total + n))
+          done
+
+          # Round down so the claim is never higher than reality.
+          if   [ "$total" -ge 1000 ]; then rounded=$(( total / 1000 * 1000 ))
+          elif [ "$total" -ge 100 ];  then rounded=$(( total / 100 * 100 ))
+          else rounded=$total; fi
+          label="$(perl -e '$_=shift; 1 while s/^(\d+)(\d{3})/$1,$2/; print' "$rounded")+"
+          echo "Total last month: $total -> $label"
+
+          perl -0pi -e "s|(<!-- NPM-TOTAL:START -->).*?(<!-- NPM-TOTAL:END -->)|\${1}${label}\${2}|s" README.md
+
+          if git diff --quiet README.md; then
+            echo "No change."
+          else
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git commit -am "Update npm download total to $label"
+            git push
+          fi
+
+      # Latest dev.to posts between the BLOG-POST-LIST markers.
+      # enable_keepalive (on by default) makes a small commit if the repo has had no
+      # activity for 50 days, so GitHub doesn't disable this schedule at 60 days.
+      - name: Update blog posts
+        uses: gautamkrishnar/blog-post-workflow@f177491c77670f150ab4e9b9890254d8eba4164b # 1.9.7
+        with:
+          feed_list: "https://dev.to/feed/its-magdy"
+          max_post_count: 5
+          enable_keepalive: true
+          commit_message: "Update blog posts"
