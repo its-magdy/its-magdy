@@ -11,8 +11,8 @@
 
 | Project | What it does | Stack |
 |---|---|---|
-| [design-twin](https://github.com/its-magdy/design-twin) | Figma → code with Claude Code on the free Figma plan, then checks the build against the design. No API key, no cloud in between.<br>![npm](https://img.shields.io/npm/dm/@design-twin/dtwin?style=flat-square&label=npm) | TypeScript · Bun · MCP |
-| [translate-local](https://github.com/its-magdy/translate-local) | CLI translation with enforced glossary terms and local-file context, on a local model via Ollama.<br>![npm](https://img.shields.io/npm/dm/@translate-local/tl?style=flat-square&label=npm) | TypeScript · Bun · Ollama |
+| [design-twin](https://github.com/its-magdy/design-twin) | Figma → code with Claude Code on the free Figma plan, then checks the build against the design. No API key, no cloud in between.<br>[![npm downloads](https://img.shields.io/npm/dm/@design-twin/dtwin?style=flat-square&label=npm)](https://www.npmjs.com/package/@design-twin/dtwin) | TypeScript · Bun · MCP |
+| [translate-local](https://github.com/its-magdy/translate-local) | CLI translation with enforced glossary terms and local-file context, on a local model via Ollama.<br>[![npm downloads](https://img.shields.io/npm/dm/@translate-local/tl?style=flat-square&label=npm)](https://www.npmjs.com/package/@translate-local/tl) | TypeScript · Bun · Ollama |
 | [qa-warden](https://github.com/its-magdy/qa-warden) | Writes Playwright E2E tests from plain-language specs, and no AI can quietly loosen an assertion. Nightly runs cost $0 in LLM calls. | Playwright · Shell |
 | [evalup](https://github.com/its-magdy/evalup) | Measures what your LLM chat or agent app gets wrong, and which prompt to fix. Reproducible scores that CI can gate on. | Python |
 | [claude-code-mods](https://github.com/its-magdy/claude-code-mods) | Small Claude Code mods. First one, image-peek, shows the images you paste instead of `[Image #N]`. | TypeScript |
