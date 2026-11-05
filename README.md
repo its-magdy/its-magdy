@@ -17,7 +17,7 @@
 | [qa-warden](https://github.com/its-magdy/qa-warden) | Writes Playwright E2E tests from plain-language specs, and no AI can quietly loosen an assertion. Nightly runs cost $0 in LLM calls. | Playwright · Shell |
 | [evalup](https://github.com/its-magdy/evalup) | Measures what your LLM chat or agent app gets wrong, and which prompt to fix. Reproducible scores that CI can gate on. | Python |
 | [claude-code-mods](https://github.com/its-magdy/claude-code-mods) | Small Claude Code mods. First one, image-peek, shows the images you paste instead of `[Image #N]`. | TypeScript |
-| [rails-local-ci](https://github.com/its-magdy/rails-local-ci) | Backports Rails 8.1's `bin/ci` runner to Rails 5.2–7.x. | Ruby gem |
+| [rails-local-ci](https://github.com/its-magdy/rails-local-ci) | Backports Rails' `bin/ci` runner to Rails 5.2–8.1, including parallel groups and fail-fast that Rails 8.1 doesn't ship yet. | Ruby gem |
 | [bb-signoff](https://github.com/its-magdy/bb-signoff) | Post green commit statuses to Bitbucket Cloud from your laptop, enforced via merge checks. | Shell |
 
 ## Apps
