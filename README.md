@@ -2,8 +2,9 @@
 
 **Software Engineer.** I build products end to end (web, backend, mobile, CLIs and developer tools) and I like making things easier for the people who use them.
 
-- Now at [Trianglz](https://trianglz.com): building an AI assistant for an air traffic control workforce platform, from the .NET backend to the React chat UI
-- Before that: a retail platform reaching 100M+ households, a serverless notification system sending campaigns to 1M+ users, and a K-12 learning platform used in 6 countries
+- At [Trianglz](https://trianglz.com) since 2023, working across client projects:
+  - Now: an AI assistant for an air traffic control workforce platform, from the .NET backend to the React chat UI
+  - Earlier: a retail platform reaching 100M+ households, a serverless notification system sending campaigns to 1M+ users, and a K-12 learning platform used in 6 countries
 - After hours: open-source tools and my own products, <!-- NPM-TOTAL:START -->3,000+<!-- NPM-TOTAL:END --> npm downloads a month
 - Sharing what I build on [X @itsmagdym4](https://x.com/itsmagdym4)
 
