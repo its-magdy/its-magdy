@@ -24,7 +24,7 @@
 
 **[Network Usage Monitor](https://play.google.com/store/apps/details?id=com.netstats)**: Android app that tracks Wi-Fi and mobile data by day, month and per app. No ads. First built in 2020, rebuilt in 2026 with Jetpack Compose, 15 languages and RTL.
 
-[![Google Play](https://img.shields.io/badge/Google_Play-5.0★_·_500%2B_installs-414141?style=flat-square&logo=googleplay&logoColor=white)](https://play.google.com/store/apps/details?id=com.netstats)
+[![Google Play](https://img.shields.io/badge/Google_Play-5.0★_·_1K%2B_installs-414141?style=flat-square&logo=googleplay&logoColor=white)](https://play.google.com/store/apps/details?id=com.netstats)
 
 ## Blog Posts
 
